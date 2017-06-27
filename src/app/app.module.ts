@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'listings', component: ListingsComponent},
   {path: 'listing/:id', component: ListingComponent},
-  {path: 'add-listing', component: AddListingComponent}
+  {path: 'add-listing', component: AddListingComponent},
+  {path: 'edit-listing/:id', component: EditListingComponent}
 ]
 
 @NgModule({
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserModule,
     FlashMessagesModule,
+    ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     RouterModule.forRoot(appRoutes),
